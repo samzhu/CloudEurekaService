@@ -13,6 +13,6 @@ deployment:
     branch: master
     commands:
       - gradle build && cp -R build/libs $CIRCLE_ARTIFACTS
-      - docker build -t "spike234/eurekaserver:$CIRCLE_BUILD_NUM" .
+      - docker build -t "spike234/eurekaservice:$CIRCLE_BUILD_NUM" .
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push "spike234/eurekaserver:$CIRCLE_BUILD_NUM"
+      - docker push "spike234/eurekaservice:$CIRCLE_BUILD_NUM"
